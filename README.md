@@ -1,4 +1,199 @@
-# Test
-Nur ein Test.
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1440" height="560" viewBox="0 0 1440 560"
+     role="img" aria-labelledby="title description">
+  <title id="title">Jeremy Jud – Nordlicht über dem Bergsee</title>
+  <desc id="description">Ein animiertes Nordlicht leuchtet über Bergen und einem stillen See.</desc>
 
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#080c20"/>
+      <stop offset=".58" stop-color="#172547"/>
+      <stop offset="1" stop-color="#31566a"/>
+    </linearGradient>
 
+    <linearGradient id="aurora" x2="1" y2="1">
+      <stop stop-color="#5effc3" stop-opacity="0"/>
+      <stop offset=".45" stop-color="#5effc3" stop-opacity=".48"/>
+      <stop offset=".72" stop-color="#71caff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#71caff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="mountain" x2=".2" y2="1">
+      <stop stop-color="#526d83"/>
+      <stop offset=".45" stop-color="#263b58"/>
+      <stop offset="1" stop-color="#101a30"/>
+    </linearGradient>
+
+    <linearGradient id="lake" x2="0" y2="1">
+      <stop stop-color="#244b61"/>
+      <stop offset=".45" stop-color="#132d46"/>
+      <stop offset="1" stop-color="#091426"/>
+    </linearGradient>
+
+    <linearGradient id="reflection" x2="0" y2="1">
+      <stop stop-color="#69f0c2" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#69f0c2" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="letters" x2="0" y2="1">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".55" stop-color="#d9fff3"/>
+      <stop offset="1" stop-color="#8ed9ce"/>
+    </linearGradient>
+
+    <radialGradient id="moonGlow">
+      <stop stop-color="#d9fff3" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#d9fff3" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-50%" y="-100%" width="200%" height="300%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+    <filter id="textShadow" x="-30%" y="-60%" width="160%" height="220%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10"
+                    flood-color="#020817" flood-opacity=".8"/>
+    </filter>
+
+    <clipPath id="frame">
+      <rect width="1440" height="560" rx="26"/>
+    </clipPath>
+
+    <style>
+      .aurora {
+        animation: drift 16s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+
+      .aurora-back {
+        animation: driftBack 21s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+
+      .twinkle {
+        animation: twinkle 3s ease-in-out infinite;
+      }
+
+      .twinkle-late {
+        animation: twinkle 4s ease-in-out 1.5s infinite;
+      }
+
+      .title-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes drift {
+        from { transform: translateX(-45px) skewX(-4deg); opacity: .65; }
+        to { transform: translateX(45px) skewX(4deg); opacity: 1; }
+      }
+
+      @keyframes driftBack {
+        from { transform: translateX(35px) scaleY(.9); opacity: .35; }
+        to { transform: translateX(-35px) scaleY(1.08); opacity: .75; }
+      }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: .25; }
+        50% { opacity: .95; }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-7px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <path fill="url(#sky)" d="M0 0h1440v560H0z"/>
+
+    <g fill="#e1fff7">
+      <circle cx="142" cy="73" r="1.5" class="twinkle"/>
+      <circle cx="294" cy="126" r="1" opacity=".55"/>
+      <circle cx="445" cy="58" r="1.2" class="twinkle-late"/>
+      <circle cx="672" cy="103" r="1" opacity=".6"/>
+      <circle cx="883" cy="64" r="1.4" class="twinkle"/>
+      <circle cx="1096" cy="119" r="1" opacity=".55"/>
+      <circle cx="1290" cy="71" r="1.5" class="twinkle-late"/>
+      <circle cx="1361" cy="151" r="1" opacity=".5"/>
+      <circle cx="548" cy="161" r=".8" opacity=".45"/>
+      <circle cx="1018" cy="40" r=".8" opacity=".5"/>
+    </g>
+
+    <circle cx="1150" cy="158" r="94" fill="url(#moonGlow)"/>
+    <circle cx="1150" cy="158" r="27" fill="#e4fff5" opacity=".88"/>
+    <circle cx="1160" cy="150" r="25" fill="#172547"/>
+
+    <path class="aurora-back"
+          d="M-60 230C180 88 340 177 520 99S870 46 1060 131
+             1300 192 1500 75V310H-60Z"
+          fill="url(#aurora)" filter="url(#softGlow)"/>
+
+    <path class="aurora"
+          d="M-60 203C170 108 328 210 520 127S850 49 1030 125
+             1290 181 1500 104"
+          fill="none" stroke="#74ffd0" stroke-width="42"
+          stroke-linecap="round" opacity=".22" filter="url(#softGlow)"/>
+
+    <path class="aurora-back"
+          d="M-60 220C180 128 350 220 550 146S890 81 1080 145
+             1320 205 1500 122"
+          fill="none" stroke="#a2ffe1" stroke-width="2"
+          stroke-linecap="round" opacity=".55"/>
+
+    <path d="M0 343 150 220 244 292 386 177 526 315 668 208
+             824 330 986 193 1113 294 1262 201 1440 337V420H0Z"
+          fill="#1c2d49"/>
+
+    <path d="m306 247 80-70 77 76-42-17-24 13-22-20-24 20-20-9Z
+             M886 267l100-74 84 78-48-18-27 13-22-22-25 21-24-8Z
+             M1194 258l68-57 71 67-38-15-20 11-22-19-20 18-21-5Z"
+          fill="#d9eee9" opacity=".58"/>
+
+    <path d="M0 371 157 276 292 352 448 250 590 365
+             745 282 908 372 1074 266 1234 365 1385 280
+             1440 315V430H0Z"
+          fill="url(#mountain)"/>
+
+    <path d="M0 365H1440V560H0Z" fill="url(#lake)"/>
+    <path d="M0 366H1440" stroke="#a4e9db" stroke-opacity=".35"/>
+
+    <path d="M1128 366h44l105 194H1023Z" fill="url(#reflection)"/>
+
+    <g stroke="#c2ffeb" stroke-linecap="round" opacity=".45">
+      <path d="M1122 386h56M1102 409h94M1134 437h48M1080 469h102"
+            stroke-width="2"/>
+      <path d="M1138 398h30M1117 426h65M1141 455h27M1103 489h74"
+            stroke-width="1"/>
+    </g>
+
+    <g fill="none" stroke="#90d5d0" stroke-linecap="round" opacity=".25">
+      <path d="M92 402h130m66 22h180m-375 35h143m404-46h116"/>
+      <path d="M784 432h171m-99 35h203m-731 22h242m568-15h174"/>
+      <path d="M120 518h181m494 18h128m251-35h140"/>
+    </g>
+
+    <g class="title-float">
+      <text x="720" y="310" text-anchor="middle"
+            font-family="Georgia, 'Times New Roman', serif"
+            font-size="108" letter-spacing="10"
+            fill="#6effd0" opacity=".32" filter="url(#softGlow)">Jeremy Jud</text>
+
+      <text x="720" y="310" text-anchor="middle"
+            font-family="Georgia, 'Times New Roman', serif"
+            font-size="108" letter-spacing="10"
+            fill="url(#letters)" filter="url(#textShadow)">Jeremy Jud</text>
+
+      <path d="M530 331h130m150 0h130"
+            stroke="#b5f5e4" stroke-opacity=".55"/>
+      <circle cx="720" cy="331" r="3" fill="#d8fff2"/>
+    </g>
+
+    <rect x="12" y="12" width="1416" height="536" rx="19"
+          fill="none" stroke="#d7fff1" stroke-opacity=".16"/>
+  </g>
+</svg>
