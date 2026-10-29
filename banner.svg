@@ -1,148 +1,187 @@
 <svg xmlns="http://www.w3.org/2000/svg"
      width="1440" height="560" viewBox="0 0 1440 560"
      role="img" aria-labelledby="title description">
-  <title id="title">Jeremy Jud – Nordlicht über dem Bergsee</title>
-  <desc id="description">Ein animiertes Nordlicht leuchtet über Bergen und einem stillen See.</desc>
+  <title id="title">Jeremy Jud – Wüstenabend</title>
+  <desc id="description">Kamele ziehen an Pyramiden vorbei in den Sonnenuntergang, nahe einer türkisfarbenen Oase.</desc>
 
   <defs>
     <linearGradient id="sky" x2="0" y2="1">
-      <stop stop-color="#080c20"/>
-      <stop offset=".58" stop-color="#172547"/>
-      <stop offset="1" stop-color="#31566a"/>
+      <stop stop-color="#211633"/>
+      <stop offset=".38" stop-color="#75445a"/>
+      <stop offset=".72" stop-color="#e17b58"/>
+      <stop offset="1" stop-color="#ffc27e"/>
     </linearGradient>
 
-    <linearGradient id="aurora" x2="1" y2="1">
-      <stop stop-color="#5effc3" stop-opacity="0"/>
-      <stop offset=".45" stop-color="#5effc3" stop-opacity=".48"/>
-      <stop offset=".72" stop-color="#71caff" stop-opacity=".3"/>
-      <stop offset="1" stop-color="#71caff" stop-opacity="0"/>
-    </linearGradient>
-
-    <linearGradient id="mountain" x2=".2" y2="1">
-      <stop stop-color="#526d83"/>
-      <stop offset=".45" stop-color="#263b58"/>
-      <stop offset="1" stop-color="#101a30"/>
-    </linearGradient>
-
-    <linearGradient id="lake" x2="0" y2="1">
-      <stop stop-color="#244b61"/>
-      <stop offset=".45" stop-color="#132d46"/>
-      <stop offset="1" stop-color="#091426"/>
-    </linearGradient>
-
-    <linearGradient id="reflection" x2="0" y2="1">
-      <stop stop-color="#69f0c2" stop-opacity=".28"/>
-      <stop offset="1" stop-color="#69f0c2" stop-opacity="0"/>
-    </linearGradient>
-
-    <linearGradient id="letters" x2="0" y2="1">
-      <stop stop-color="#ffffff"/>
-      <stop offset=".55" stop-color="#d9fff3"/>
-      <stop offset="1" stop-color="#8ed9ce"/>
-    </linearGradient>
-
-    <radialGradient id="moonGlow">
-      <stop stop-color="#d9fff3" stop-opacity=".3"/>
-      <stop offset="1" stop-color="#d9fff3" stop-opacity="0"/>
+    <radialGradient id="sunGlow">
+      <stop stop-color="#ffe9a8" stop-opacity=".85"/>
+      <stop offset=".45" stop-color="#ffb766" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#ff9b61" stop-opacity="0"/>
     </radialGradient>
 
-    <filter id="softGlow" x="-50%" y="-100%" width="200%" height="300%">
-      <feGaussianBlur stdDeviation="12"/>
+    <linearGradient id="sun" x2="0" y2="1">
+      <stop stop-color="#fff5c8"/>
+      <stop offset="1" stop-color="#ffbd72"/>
+    </linearGradient>
+
+    <linearGradient id="duneBack" x2=".2" y2="1">
+      <stop stop-color="#d98261"/>
+      <stop offset="1" stop-color="#9d5360"/>
+    </linearGradient>
+
+    <linearGradient id="duneMid" x2=".1" y2="1">
+      <stop stop-color="#f0a168"/>
+      <stop offset="1" stop-color="#bd684f"/>
+    </linearGradient>
+
+    <linearGradient id="duneFront" x2=".2" y2="1">
+      <stop stop-color="#d88756"/>
+      <stop offset="1" stop-color="#663d4b"/>
+    </linearGradient>
+
+    <linearGradient id="pyramid" x2="1" y2=".35">
+      <stop stop-color="#f4bd7d"/>
+      <stop offset=".5" stop-color="#c8815e"/>
+      <stop offset=".51" stop-color="#9c5b52"/>
+      <stop offset="1" stop-color="#6e4450"/>
+    </linearGradient>
+
+    <linearGradient id="water" x2="0" y2="1">
+      <stop stop-color="#55e4d0"/>
+      <stop offset=".45" stop-color="#16aeb0"/>
+      <stop offset="1" stop-color="#126e83"/>
+    </linearGradient>
+
+    <linearGradient id="waterShine" x2="1" y2="0">
+      <stop stop-color="#d1fff0" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#d1fff0" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#d1fff0" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="nameFill" x2="0" y2="1">
+      <stop stop-color="#fff9e8"/>
+      <stop offset=".55" stop-color="#ffe4b2"/>
+      <stop offset="1" stop-color="#f3ae83"/>
+    </linearGradient>
+
+    <filter id="sunBlur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="18"/>
     </filter>
 
-    <filter id="textShadow" x="-30%" y="-60%" width="160%" height="220%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10"
-                    flood-color="#020817" flood-opacity=".8"/>
+    <filter id="nameShadow" x="-30%" y="-60%" width="160%" height="220%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8"
+                    flood-color="#3b2032" flood-opacity=".7"/>
     </filter>
 
     <clipPath id="frame">
       <rect width="1440" height="560" rx="26"/>
     </clipPath>
 
+    <!-- Silhouette eines Kamels mit Reiter -->
+    <g id="camel" fill="#382536">
+      <!-- Beine -->
+      <path d="M37 67l3 30h6l4-29zm28 0 4 30h6l2-31zm53-1 2 31h6l5-30zm28-2 4 32h6l2-33z"/>
+      <!-- Körper und Höcker -->
+      <path d="M28 52
+               Q30 43 41 43
+               Q47 28 59 30
+               Q70 31 73 44
+               Q86 42 94 48
+               Q104 39 115 42
+               Q127 43 131 53
+               Q143 51 151 58
+               L148 69
+               Q129 76 109 71
+               L91 68
+               Q72 76 49 70
+               L33 66Z"/>
+      <!-- Hals und Kopf -->
+      <path d="M136 56
+               Q143 43 141 31
+               L147 15
+               Q150 10 157 12
+               L165 17
+               L160 22
+               L153 20
+               L149 34
+               Q152 48 160 55
+               L155 63Z"/>
+      <!-- Ohr -->
+      <path d="M151 12l-2-8 6 6z"/>
+      <!-- Sattel -->
+      <path d="M66 39h36l7 8H63z" fill="#a95449"/>
+      <!-- Reiter -->
+      <circle cx="87" cy="24" r="6"/>
+      <path d="M82 31l-5 15h19l-5-15z"/>
+      <path d="M83 43l-9 10 4 3 12-10m1-3 9 10 4-3-7-12"/>
+    </g>
+
     <style>
-      .aurora {
-        animation: aurora-wave 7s ease-in-out infinite alternate;
+      .sun-pulse {
+        animation: sun-pulse 6s ease-in-out infinite alternate;
         transform-box: fill-box;
         transform-origin: center;
       }
 
-      .aurora-back {
-        animation: aurora-back-wave 10s ease-in-out infinite alternate;
-        transform-box: fill-box;
-        transform-origin: center;
+      .caravan {
+        animation: caravan 18s ease-in-out infinite alternate;
       }
 
-      .twinkle {
-        animation: twinkle 2s ease-in-out infinite;
+      .water-shimmer {
+        animation: shimmer 4s ease-in-out infinite alternate;
       }
 
-      .twinkle-late {
-        animation: twinkle 3s ease-in-out 1s infinite;
+      .palm-sway {
+        animation: sway 5s ease-in-out infinite alternate;
+        transform-box: view-box;
+        transform-origin: 210px 410px;
+      }
+
+      .palm-sway-two {
+        animation: sway 6s ease-in-out -2s infinite alternate;
+        transform-box: view-box;
+        transform-origin: 1240px 414px;
+      }
+
+      .star {
+        animation: twinkle 3s ease-in-out infinite;
+      }
+
+      .star-late {
+        animation: twinkle 4s ease-in-out 1.5s infinite;
       }
 
       .title-float {
-        animation: float 4s ease-in-out infinite;
+        animation: float 6s ease-in-out infinite;
       }
 
-      .water-glint {
-        animation: water-glint 3s ease-in-out infinite alternate;
-        transform-box: fill-box;
-        transform-origin: center;
+      @keyframes sun-pulse {
+        from { transform: scale(.94); opacity: .7; }
+        to { transform: scale(1.08); opacity: 1; }
       }
 
-      .moon-glow {
-        animation: moon-glow 4s ease-in-out infinite alternate;
-        transform-box: fill-box;
-        transform-origin: center;
+      @keyframes caravan {
+        from { transform: translateX(-18px); }
+        to { transform: translateX(30px); }
       }
 
-      @keyframes aurora-wave {
-        0% {
-          transform: translate(-55px, 12px) scaleY(.72);
-          opacity: .25;
-        }
-        50% { opacity: .9; }
-        100% {
-          transform: translate(55px, -12px) scaleY(1.3);
-          opacity: .75;
-        }
+      @keyframes shimmer {
+        from { transform: translateX(-55px); opacity: .35; }
+        to { transform: translateX(55px); opacity: .9; }
       }
 
-      @keyframes aurora-back-wave {
-        0% {
-          transform: translate(45px, 10px) scaleY(.75);
-          opacity: .25;
-        }
-        100% {
-          transform: translate(-45px, -10px) scaleY(1.25);
-          opacity: .85;
-        }
+      @keyframes sway {
+        from { transform: rotate(-3deg); }
+        to { transform: rotate(3deg); }
       }
 
       @keyframes twinkle {
-        0%, 100% { opacity: .15; }
+        0%, 100% { opacity: .2; }
         50% { opacity: 1; }
       }
 
       @keyframes float {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-12px); }
-      }
-
-      @keyframes water-glint {
-        0% {
-          transform: translateX(-35px) scaleX(.8);
-          opacity: .15;
-        }
-        100% {
-          transform: translateX(35px) scaleX(1.25);
-          opacity: .9;
-        }
-      }
-
-      @keyframes moon-glow {
-        from { opacity: .25; transform: scale(.8); }
-        to { opacity: 1; transform: scale(1.2); }
+        50% { transform: translateY(-8px); }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -152,106 +191,161 @@
   </defs>
 
   <g clip-path="url(#frame)">
-    <!-- Himmel -->
-    <path fill="url(#sky)" d="M0 0h1440v560H0z"/>
+    <!-- Abendhimmel -->
+    <path d="M0 0h1440v560H0z" fill="url(#sky)"/>
 
-    <!-- Sterne -->
-    <g fill="#e1fff7">
-      <circle cx="142" cy="73" r="1.5" class="twinkle"/>
-      <circle cx="294" cy="126" r="1" opacity=".55"/>
-      <circle cx="445" cy="58" r="1.2" class="twinkle-late"/>
-      <circle cx="672" cy="103" r="1" opacity=".6"/>
-      <circle cx="883" cy="64" r="1.4" class="twinkle"/>
-      <circle cx="1096" cy="119" r="1" opacity=".55"/>
-      <circle cx="1290" cy="71" r="1.5" class="twinkle-late"/>
-      <circle cx="1361" cy="151" r="1" opacity=".5"/>
-      <circle cx="548" cy="161" r=".8" opacity=".45"/>
-      <circle cx="1018" cy="40" r=".8" opacity=".5"/>
+    <!-- Erste Sterne -->
+    <g fill="#fff1d2">
+      <circle class="star" cx="125" cy="83" r="1.5"/>
+      <circle cx="278" cy="127" r="1" opacity=".55"/>
+      <circle class="star-late" cx="452" cy="69" r="1.3"/>
+      <circle cx="1048" cy="81" r="1" opacity=".55"/>
+      <circle class="star" cx="1285" cy="117" r="1.4"/>
+      <circle cx="1360" cy="60" r="1" opacity=".6"/>
     </g>
 
-    <!-- Mond -->
-    <circle class="moon-glow" cx="1150" cy="158" r="94"
-            fill="url(#moonGlow)"/>
-    <circle cx="1150" cy="158" r="27" fill="#e4fff5" opacity=".88"/>
-    <circle cx="1160" cy="150" r="25" fill="#172547"/>
+    <!-- Leuchtende Abendsonne -->
+    <circle class="sun-pulse" cx="1010" cy="262" r="155"
+            fill="url(#sunGlow)" filter="url(#sunBlur)"/>
+    <circle cx="1010" cy="262" r="67" fill="url(#sun)"/>
 
-    <!-- Nordlicht -->
-    <path class="aurora-back"
-          d="M-60 230C180 88 340 177 520 99S870 46 1060 131
-             1300 192 1500 75V310H-60Z"
-          fill="url(#aurora)" filter="url(#softGlow)"/>
-
-    <path class="aurora"
-          d="M-60 203C170 108 328 210 520 127S850 49 1030 125
-             1290 181 1500 104"
-          fill="none" stroke="#74ffd0" stroke-width="42"
-          stroke-linecap="round" opacity=".22" filter="url(#softGlow)"/>
-
-    <path class="aurora-back"
-          d="M-60 220C180 128 350 220 550 146S890 81 1080 145
-             1320 205 1500 122"
-          fill="none" stroke="#a2ffe1" stroke-width="2"
-          stroke-linecap="round" opacity=".55"/>
-
-    <!-- Ferne Berge -->
-    <path d="M0 343 150 220 244 292 386 177 526 315 668 208
-             824 330 986 193 1113 294 1262 201 1440 337V420H0Z"
-          fill="#1c2d49"/>
-
-    <!-- Schneespitzen -->
-    <path d="m306 247 80-70 77 76-42-17-24 13-22-20-24 20-20-9Z
-             M886 267l100-74 84 78-48-18-27 13-22-22-25 21-24-8Z
-             M1194 258l68-57 71 67-38-15-20 11-22-19-20 18-21-5Z"
-          fill="#d9eee9" opacity=".58"/>
-
-    <!-- Berge im Vordergrund -->
-    <path d="M0 371 157 276 292 352 448 250 590 365
-             745 282 908 372 1074 266 1234 365 1385 280
-             1440 315V430H0Z"
-          fill="url(#mountain)"/>
-
-    <!-- Bergsee -->
-    <path d="M0 365H1440V560H0Z" fill="url(#lake)"/>
-    <path d="M0 366H1440" stroke="#a4e9db" stroke-opacity=".35"/>
-
-    <!-- Reflexion des Mondlichts -->
-    <path d="M1128 366h44l105 194H1023Z" fill="url(#reflection)"/>
-
-    <g stroke="#c2ffeb" stroke-linecap="round" opacity=".45">
-      <path d="M1122 386h56M1102 409h94M1134 437h48M1080 469h102"
-            stroke-width="2"/>
-      <path d="M1138 398h30M1117 426h65M1141 455h27M1103 489h74"
-            stroke-width="1"/>
+    <!-- Sonnenstreifen -->
+    <g stroke="#c96d58" stroke-width="4" opacity=".28">
+      <path d="M951 270h118"/>
+      <path d="M958 281h104"/>
+      <path d="M972 292h76"/>
     </g>
 
-    <!-- Schimmernde Wellen -->
-    <g class="water-glint" fill="none" stroke="#90d5d0"
-       stroke-linecap="round" opacity=".25">
-      <path d="M92 402h130m66 22h180m-375 35h143m404-46h116"/>
-      <path d="M784 432h171m-99 35h203m-731 22h242m568-15h174"/>
-      <path d="M120 518h181m494 18h128m251-35h140"/>
+    <!-- Ferne Dünen -->
+    <path d="M0 343
+             C178 292 292 309 438 341
+             C596 375 744 350 900 315
+             C1074 277 1249 297 1440 336
+             V560H0Z"
+          fill="url(#duneBack)"/>
+
+    <!-- Pyramiden -->
+    <path d="M603 342 724 174 847 342Z" fill="url(#pyramid)"/>
+    <path d="M724 174 847 342H724Z" fill="#8f5050" opacity=".52"/>
+    <path d="M811 349 888 246 966 349Z" fill="url(#pyramid)"/>
+    <path d="M888 246 966 349H888Z" fill="#78454c" opacity=".48"/>
+
+    <!-- Pyramidenlinien -->
+    <g fill="none" stroke="#f6c18a" stroke-opacity=".22">
+      <path d="m646 283 156 0"/>
+      <path d="m627 309 195 0"/>
+      <path d="m615 330 219 0"/>
+      <path d="m845 305 87 0"/>
+      <path d="m830 328 121 0"/>
+    </g>
+
+    <!-- Mittlere Düne -->
+    <path d="M0 389
+             C181 350 319 366 474 402
+             C624 438 778 404 925 375
+             C1110 339 1263 362 1440 398
+             V560H0Z"
+          fill="url(#duneMid)"/>
+
+    <!-- Kamelkarawane -->
+    <g class="caravan">
+      <use href="#camel" transform="translate(630 285) scale(.72)"/>
+      <use href="#camel" transform="translate(760 302) scale(.55)"/>
+      <use href="#camel" transform="translate(850 315) scale(.43)"/>
+    </g>
+
+    <!-- Vordergrunddüne -->
+    <path d="M0 456
+             C183 403 342 431 522 478
+             C710 527 881 478 1047 440
+             C1193 407 1315 429 1440 465
+             V560H0Z"
+          fill="url(#duneFront)"/>
+
+    <!-- Türkise Oase -->
+    <path d="M874 474
+             C938 439 1065 438 1143 460
+             C1210 479 1225 516 1170 537
+             C1101 564 953 552 889 527
+             C856 514 844 492 874 474Z"
+          fill="#513b4a" opacity=".55"/>
+
+    <path d="M881 473
+             C941 444 1057 443 1130 463
+             C1188 480 1193 508 1149 525
+             C1087 548 966 539 909 518
+             C872 505 857 487 881 473Z"
+          fill="url(#water)"/>
+
+    <path class="water-shimmer"
+          d="M919 476c43-15 110-14 151-3
+             M901 495c55-14 151-12 213 2
+             M932 515c42-9 102-7 143 1"
+          fill="none" stroke="url(#waterShine)"
+          stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Palme links -->
+<g class="palm-sway" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M210 458Q221 397 206 343"
+        stroke="#604438" stroke-width="12"/>
+  <g stroke="#4f8053" stroke-width="12">
+    <path d="M207 350Q168 317 137 328
+             M208 350Q181 305 160 288
+             M208 350Q211 302 229 277
+             M208 350Q246 311 275 310
+             M208 350Q257 342 284 363
+             M207 350Q175 343 151 364"/>
+  </g>
+</g>
+
+<!-- Palme rechts -->
+<g class="palm-sway-two" fill="none"
+   stroke-linecap="round" stroke-linejoin="round">
+  <path d="M1240 469Q1228 407 1245 350"
+        stroke="#604438" stroke-width="13"/>
+  <g stroke="#4f8053" stroke-width="12">
+    <path d="M1244 357Q1207 325 1174 337
+             M1244 357Q1219 309 1196 292
+             M1244 357Q1247 305 1267 281
+             M1244 357Q1285 318 1314 320
+             M1244 357Q1292 350 1320 372
+             M1244 357Q1212 350 1187 374"/>
+  </g>
+</g>
+
+    <!-- Kleine Oasenpflanzen -->
+    <g fill="none" stroke="#273d3d" stroke-linecap="round">
+      <path d="M833 523q-8-28-25-37m27 39q4-33 22-48m-19 48q17-22 37-26"
+            stroke-width="4"/>
+      <path d="M1191 520q-5-26-19-35m20 37q8-30 27-40m-23 42q16-19 34-21"
+            stroke-width="4"/>
+    </g>
+
+    <!-- Sandlicht -->
+    <g fill="none" stroke="#ffd19a" stroke-linecap="round" opacity=".32">
+      <path d="M90 492h172m84 22h125m-351 18h133"/>
+      <path d="M424 471h101m590 35h148m-206 21h115"/>
     </g>
 
     <!-- Name -->
     <g class="title-float">
-      <text x="720" y="310" text-anchor="middle"
+      <text x="720" y="188" text-anchor="middle"
             font-family="Georgia, 'Times New Roman', serif"
-            font-size="108" letter-spacing="10"
-            fill="#6effd0" opacity=".32"
-            filter="url(#softGlow)">Jeremy Jud</text>
+            font-size="94" letter-spacing="9"
+            fill="#ffcf9c" opacity=".36">Jeremy Jud</text>
 
-      <text x="720" y="310" text-anchor="middle"
+      <text x="720" y="182" text-anchor="middle"
             font-family="Georgia, 'Times New Roman', serif"
-            font-size="108" letter-spacing="10"
-            fill="url(#letters)" filter="url(#textShadow)">Jeremy Jud</text>
+            font-size="94" letter-spacing="9"
+            fill="url(#nameFill)" filter="url(#nameShadow)">Jeremy Jud</text>
 
-      <path d="M530 331h130m150 0h130"
-            stroke="#b5f5e4" stroke-opacity=".55"/>
-      <circle cx="720" cy="331" r="3" fill="#d8fff2"/>
+      <path d="M535 204h120m170 0h120"
+            stroke="#ffe0b5" stroke-opacity=".62"/>
+      <circle cx="720" cy="204" r="4" fill="#fff0cf"/>
     </g>
 
-    <!-- Rahmen -->
+    <!-- Dekorativer Rahmen -->
     <rect x="12" y="12" width="1416" height="536" rx="19"
-          fill="none" stroke="#d7fff1" stroke-opacity=".16"/>
+          fill="none" stroke="#ffe1bd" stroke-opacity=".24"/>
   </g>
 </svg>
