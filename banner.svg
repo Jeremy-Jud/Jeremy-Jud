@@ -82,14 +82,35 @@
         animation: float 6s ease-in-out infinite;
       }
 
+      .water-glint {
+        animation: water-glint 5s ease-in-out infinite;
+      }
+
+      .moon-glow {
+        animation: moon-glow 6s ease-in-out infinite alternate;
+        transform-origin: 1150px 158px;
+      }
+
       @keyframes drift {
-        from { transform: translateX(-45px) skewX(-4deg); opacity: .65; }
-        to { transform: translateX(45px) skewX(4deg); opacity: 1; }
+        from {
+          transform: translateX(-45px) skewX(-4deg);
+          opacity: .65;
+        }
+        to {
+          transform: translateX(45px) skewX(4deg);
+          opacity: 1;
+        }
       }
 
       @keyframes driftBack {
-        from { transform: translateX(35px) scaleY(.9); opacity: .35; }
-        to { transform: translateX(-35px) scaleY(1.08); opacity: .75; }
+        from {
+          transform: translateX(35px) scaleY(.9);
+          opacity: .35;
+        }
+        to {
+          transform: translateX(-35px) scaleY(1.08);
+          opacity: .75;
+        }
       }
 
       @keyframes twinkle {
@@ -102,6 +123,28 @@
         50% { transform: translateY(-7px); }
       }
 
+      @keyframes water-glint {
+        0%, 100% {
+          opacity: .2;
+          transform: translateX(-12px);
+        }
+        50% {
+          opacity: .75;
+          transform: translateX(12px);
+        }
+      }
+
+      @keyframes moon-glow {
+        from {
+          opacity: .45;
+          transform: scale(.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1.08);
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         * { animation: none !important; }
       }
@@ -109,9 +152,10 @@
   </defs>
 
   <g clip-path="url(#frame)">
+    <!-- Himmel -->
     <path fill="url(#sky)" d="M0 0h1440v560H0z"/>
 
-    <!-- Sternenhimmel -->
+    <!-- Sterne -->
     <g fill="#e1fff7">
       <circle cx="142" cy="73" r="1.5" class="twinkle"/>
       <circle cx="294" cy="126" r="1" opacity=".55"/>
@@ -126,7 +170,8 @@
     </g>
 
     <!-- Mond -->
-    <circle cx="1150" cy="158" r="94" fill="url(#moonGlow)"/>
+    <circle class="moon-glow" cx="1150" cy="158" r="94"
+            fill="url(#moonGlow)"/>
     <circle cx="1150" cy="158" r="27" fill="#e4fff5" opacity=".88"/>
     <circle cx="1160" cy="150" r="25" fill="#172547"/>
 
@@ -169,7 +214,7 @@
     <path d="M0 365H1440V560H0Z" fill="url(#lake)"/>
     <path d="M0 366H1440" stroke="#a4e9db" stroke-opacity=".35"/>
 
-    <!-- Mondreflexion -->
+    <!-- Reflexion des Mondlichts -->
     <path d="M1128 366h44l105 194H1023Z" fill="url(#reflection)"/>
 
     <g stroke="#c2ffeb" stroke-linecap="round" opacity=".45">
@@ -179,8 +224,9 @@
             stroke-width="1"/>
     </g>
 
-    <!-- Feine Wellen -->
-    <g fill="none" stroke="#90d5d0" stroke-linecap="round" opacity=".25">
+    <!-- Schimmernde Wellen -->
+    <g class="water-glint" fill="none" stroke="#90d5d0"
+       stroke-linecap="round" opacity=".25">
       <path d="M92 402h130m66 22h180m-375 35h143m404-46h116"/>
       <path d="M784 432h171m-99 35h203m-731 22h242m568-15h174"/>
       <path d="M120 518h181m494 18h128m251-35h140"/>
@@ -191,7 +237,8 @@
       <text x="720" y="310" text-anchor="middle"
             font-family="Georgia, 'Times New Roman', serif"
             font-size="108" letter-spacing="10"
-            fill="#6effd0" opacity=".32" filter="url(#softGlow)">Jeremy Jud</text>
+            fill="#6effd0" opacity=".32"
+            filter="url(#softGlow)">Jeremy Jud</text>
 
       <text x="720" y="310" text-anchor="middle"
             font-family="Georgia, 'Times New Roman', serif"
